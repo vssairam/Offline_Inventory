@@ -1,0 +1,8 @@
+[tool.ruff.lint]
+ignore = ["B008"]
+
+[tool.mypy]
+ignore_missing_imports = true
+# Models use classic Column attributes; mypy types them as Column[T] rather than T.
+# Disable the resulting false positives instead of blanket type: ignore comments.
+disable_error_code = ["arg-type", "assignment", "var-annotated", "index", "call-overload"]
